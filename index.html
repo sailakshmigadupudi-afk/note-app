@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Notes App</title>
+  <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+  <div id="auth-container">
+    <h2 id="auth-title">Sign In</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="auth-action">Sign In</button>
+    <p>
+      <span id="toggle-auth">Don't have an account? Sign Up</span>
+    </p>
+    <div id="auth-error"></div>
+  </div>
+  <div id="notes-container" style="display:none;">
+    <h2>Your Notes</h2>
+    <div id="notes-list-section">
+      <button id="new-note-btn">+ New Note</button>
+      <ul id="notes-list"></ul>
+    </div>
+    <div id="note-editor" style="display:none;">
+      <input type="text" id="note-title" placeholder="Note Title" /><br>
+      <textarea id="note-content" rows="10" cols="50" placeholder="Write your note here..."></textarea><br>
+      <button id="save-note-btn">Save Note</button>
+      <button id="delete-note-btn" style="background:#e57373;">Delete Note</button>
+      <button id="close-editor-btn" type="button">Close</button>
+      <div id="note-status"></div>
+    </div>
+    <br>
+    <button id="logout">Log Out</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
