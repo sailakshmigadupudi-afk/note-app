@@ -1,110 +1,148 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    background: #33ce10;
-  }
-  
-  #auth-container, #notes-container {
-    background: #d00456;
-    padding: 24px;
-    border-radius: 12px;
-    max-width: 400px;
-    margin: 40px auto;
-    box-shadow: 0 2px 12px rgba(143, 106, 199, 0.18);
-  }
-  
-  input, textarea {
-    width: 100%;
-    margin-bottom: 16px;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ca0b0b;
-    border-radius: 4px;
-    background: #92bb0c;
-    box-sizing: border-box;
-  }
-  
-  button {
-    padding: 8px 16px;
-    margin-right: 8px;
-    background: #a47be5;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  button:hover {
-    background: #7a4fd6;
-  }
-  
-  #delete-note-btn {
-    background: #e57373;
-  }
-  #delete-note-btn:hover {
-    background: #c62828;
-  }
-  
-  #close-editor-btn {
-    background: #aaa;
-  }
-  #close-editor-btn:hover {
-    background: #888;
-  }
-  
-  #toggle-auth {
-    color: #7a4fd6;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  
-  #error, #save-status, #note-status {
-    color: #d04a5e;
-    margin-top: 8px;
-  }
-  
-  #save-status, #note-status {
-    color: #4ab07a;
-  }
-  
-  #notes-list-section {
-    margin-bottom: 16px;
-  }
-  
-  #notes-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-height: 200px;
-    overflow-y: auto;
-  }
-  
-  #notes-list li {
-    padding: 8px;
-    background: #faf6ff;
-    border-radius: 4px;
-    margin-bottom: 6px;
-    cursor: pointer;
-    border: 1px solid #cb90e5;
-    transition: background 0.2s;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  #notes-list li.selected {
-    background: #e3d1fa;
-    font-weight: bold;
-  }
-  
-  #notes-list li .note-title {
-    flex: 1;
-    margin-right: 8px;
-    word-break: break-all;
-  }
-  
-  #notes-list li .note-date {
-    font-size: 0.85em;
-    color: #888;
-  }
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background: #f8f9fa; /* Crisp, clean off-white background */
+  color: #111111;      /* Deep black for all main typography */
+}
+
+#auth-container, #notes-container {
+  background: #ffffff; /* Pure white surface for the cards */
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: 40px auto;
+  border: 3px solid #111111; /* Thick black border for a bold structure */
+  box-shadow: 6px 6px 0px rgba(17, 17, 17, 1); /* Flat, modern bold shadow */
+}
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 12px;
+  font-size: 1em;
+  border: 2px solid #111111; /* Clean black outline */
+  border-radius: 6px;
+  background: #ffffff;      /* White input backgrounds for legibility */
+  color: #111111;
+  box-sizing: border-box;
+  transition: background-color 0.2s;
+}
+
+/* Yellow highlight focus when a student clicks inside an input */
+input:focus, textarea:focus {
+  background: #fff9db; 
+  outline: none;
+  border-color: #ffd43b; /* Solid golden yellow accent border */
+}
+
+button {
+  padding: 10px 20px;
+  margin-right: 8px;
+  background: #ffd43b; /* Thick signature yellow */
+  color: #111111;      /* Bold black text on yellow */
+  border: 2px solid #111111;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+button:hover {
+  background: #fcc419; /* Slightly deeper golden yellow on hover */
+  transform: translateY(-1px);
+}
+
+/* Destructive action button (Delete) */
+#delete-note-btn {
+  background: #111111; /* Solid black button */
+  color: #ffffff;      /* High contrast white text */
+  border: 2px solid #111111;
+}
+
+#delete-note-btn:hover {
+  background: #333333;
+}
+
+/* System action button (Close) */
+#close-editor-btn {
+  background: #ffffff;
+  color: #111111;
+  border: 2px solid #111111;
+}
+
+#close-editor-btn:hover {
+  background: #e9ecef;
+}
+
+#toggle-auth {
+  color: #111111;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* System Messages styling */
+#error {
+  color: #cc5de8; /* Distinct accent purple for warnings to stand out against theme */
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+#save-status, #note-status {
+  color: #111111;
+  background: #d3f9d8; /* Soft green alert badge */
+  padding: 6px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.9em;
+  border: 1px solid #111111;
+}
+
+#notes-list-section {
+  margin-bottom: 16px;
+}
+
+#notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Listed items layout */
+#notes-list li {
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border: 2px solid #111111;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#notes-list li:hover {
+  background: #f8f9fa;
+  transform: scale(1.01);
+}
+
+/* Highlight state for active elements */
+#notes-list li.selected {
+  background: #ffd43b; /* Turns vibrant yellow when selected */
+  font-weight: bold;
+}
+
+#notes-list li .note-title {
+  flex: 1;
+  margin-right: 8px;
+  word-break: break-all;
+}
+
+#notes-list li .note-date {
+  font-size: 0.85em;
+  color: #495057; /* Dark charcoal text for secondary layout details */
+}
